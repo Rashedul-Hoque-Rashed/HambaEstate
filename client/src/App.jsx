@@ -5,6 +5,7 @@ import {
 import Layout from "./routes/layout/Layout.jsx";
 import HomePage from './routes/homePage/HomePage';
 import ListPage from "./routes/listPage/ListPage.jsx";
+import SinglePage from "./routes/singlePage/SinglePage.jsx";
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
         {
           path: "/list",
           element: <ListPage />
+        },
+        {
+          path: "/:id",
+          element: <SinglePage />
         },
       ]
     },
