@@ -58,8 +58,19 @@ export const updateUsers = async (req, res) => {
 
 
 export const deleteUsers = async (req, res) => {
-    try {
 
+    const id = req.params.id;
+    const tokenUserId = req.userId;
+
+    if (id !== tokenUserId) {
+        return res.status(403).json({ message: 'Unauthorized!' })
+    }
+
+    try {
+        await prisma.user.delete({
+            where: { id }
+        })
+        res.status(200).json({ message: 'User deleted!' })
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: "Failed to delete user!" })
