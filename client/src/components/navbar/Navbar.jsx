@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import noavatar from '../../../public/noavatar.jpg'
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ function Navbar() {
         {currentUser ? (
           <div className="user">
             <img
-              src={currentUser.avatar || './noavatar.jpg'}
+              src={currentUser.avatar || noavatar}
               alt=""
             />
             <span>{currentUser.username}</span>
