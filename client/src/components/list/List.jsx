@@ -1,23 +1,14 @@
-import './List.scss';
-import Card from "../card/Card";
-import { Await } from 'react-router-dom';
+import './List.scss'
+import Card from"../card/Card"
 
-function List({ posts }) {
+function List({posts}){
   return (
     <div className='list'>
-      <Await
-        resolve={posts.postResponse}
-        errorElement={<p>Error loading posts!</p>}
-      >
-
-        {(postResponse) =>
-          postResponse.data.map((post) => (
-            <Card key={post.id} item={post} />
-          ))
-        }
-      </Await>
+      {posts.map(item=>(
+        <Card key={item.id} item={item}/>
+      ))}
     </div>
   )
 }
 
-export default List;
+export default List
