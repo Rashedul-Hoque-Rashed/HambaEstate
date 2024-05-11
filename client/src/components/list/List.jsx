@@ -1,6 +1,5 @@
 import './List.scss';
 import Card from "../card/Card";
-import { listData } from "../../lib/dummydata";
 import { Await } from 'react-router-dom';
 
 function List({ posts }) {
