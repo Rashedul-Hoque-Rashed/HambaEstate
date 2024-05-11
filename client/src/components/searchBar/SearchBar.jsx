@@ -17,7 +17,7 @@ function SearchBar() {
   };
 
   const handleChange = (e) => {
-    setQuery((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setQuery((prev) => ({ ...prev, [e.target.name]: e.target.value.toLowerCase() }));
   };
 
   return (
