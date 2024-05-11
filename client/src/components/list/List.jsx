@@ -1,13 +1,22 @@
 import './List.scss';
-import Card from"../card/Card";
-import {listData} from"../../lib/dummydata";
+import Card from "../card/Card";
+import { listData } from "../../lib/dummydata";
+import { Await } from 'react-router-dom';
 
-function List(){
+function List({ posts }) {
   return (
     <div className='list'>
-      {listData.map(item=>(
-        <Card key={item.id} item={item}/>
-      ))}
+      <Await
+        resolve={posts.postResponse}
+        errorElement={<p>Error loading posts!</p>}
+      >
+
+        {(postResponse) =>
+          postResponse.data.map((post) => (
+            <Card key={post.id} item={post} />
+          ))
+        }
+      </Await>
     </div>
   )
 }
