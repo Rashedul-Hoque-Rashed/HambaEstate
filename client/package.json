@@ -21,7 +21,8 @@
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.23.0",
     "sass": "^1.75.0",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
